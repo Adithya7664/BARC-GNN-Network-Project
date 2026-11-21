@@ -52,7 +52,7 @@ Edge features : loading %, component type, outage flag
 GNN Training (NNConv + AdamW + weighted CrossEntropyLoss)
         │
         ▼
-Inference on unseen IEEE systems → Critical / Non-Critical
+Inference on unseen IEEE systems(Different loads) → Critical / Non-Critical
 ```
 
 ---
@@ -76,6 +76,7 @@ Inference on unseen IEEE systems → Critical / Non-Critical
 | Systems | Load scales |
 |---------|-------------|
 | case9, case14, case30, case39, case57, case118 | 1.0×, 1.25×, 1.50× |
+Note: some of them not present in actual training due to the failure of some loads for few cases
 
 ---
 
@@ -99,9 +100,4 @@ pip install pandapower pandas numpy matplotlib networkx torch torch-geometric sc
 jupyter notebook final_code.ipynb
 ```
 
-**IEEE 57-bus:**
-```bash
-jupyter notebook "combined_models (3).ipynb"
-```
-
-Each notebook runs the full pipeline: contingency simulation → graph construction → GNN training → evaluation → Excel export.
+The notebook runs the full pipeline: contingency simulation → graph construction → GNN training → evaluation → Excel export.
